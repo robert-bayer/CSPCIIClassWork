@@ -1,6 +1,6 @@
 public class Rectangle2D extends Shape2D{
-    protected double length;
-    protected double width;
+    private double length;
+    private double width;
 
     public Rectangle2D(double length, double width){
         this.length = length;
@@ -9,6 +9,6 @@ public class Rectangle2D extends Shape2D{
 
     @Override
     public double get2DArea() {
-        return length * width;
+        return Math.round(length * width * 10.0) / 10.0;
     }
 }
