@@ -1,5 +1,5 @@
 public class Circle2D extends Shape2D{
-    protected double radius;
+    private double radius;
 
     public Circle2D(double radius){
         this.radius = radius;
@@ -7,6 +7,6 @@ public class Circle2D extends Shape2D{
 
     @Override
     public double get2DArea() {
-        return Math.PI * radius * radius;
+        return Math.round(Math.PI * radius * radius * 10.0) / 10.0;
     }
 }
