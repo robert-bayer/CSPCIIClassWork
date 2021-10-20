@@ -80,6 +80,8 @@ public class SimpleBankAccount{ /**
         return accountId;
     }
 
+
+
     /**
      * Produces a string representation of the balance
      * @return The balance (with a label)
@@ -88,6 +90,12 @@ public class SimpleBankAccount{ /**
         // display balance as currency
         String balanceStr = NumberFormat.getCurrencyInstance().format( balance );
         return "Balance for account " + accountId + ": " + balanceStr + "\n";
+    }
+
+    @Override
+    public boolean equals(Object obj){
+        SimpleBankAccount otherAccount = (SimpleBankAccount) obj;
+        return (this.getAccountId().equals(otherAccount.accountId) && this.getBalance() == otherAccount.getBalance());
     }
 
 }
