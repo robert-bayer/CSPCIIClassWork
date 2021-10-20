@@ -24,9 +24,20 @@ public class CheckingAccount extends SimpleBankAccount{
         }
     }
 
+    public int getLastCheck(){
+        return LastCheck;
+    }
+
+    @Override
     public String toString( ) {
         // display balance as currency
         String balanceStr = NumberFormat.getCurrencyInstance().format(balance);
-        return "Checking Account:\nBalance for account " + accountId + ": " + balanceStr + "\nLast Processed Check: " + LastCheck +"\n";
+        return super.toString() + "\nLast Processed Check: " + LastCheck +"\n";
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        CheckingAccount otherAccount = (CheckingAccount) obj;
+        return (this.getAccountId().equals(otherAccount.getAccountId()) && this.getBalance() == otherAccount.getBalance() && this.getLastCheck() == otherAccount.getLastCheck());
     }
 }
